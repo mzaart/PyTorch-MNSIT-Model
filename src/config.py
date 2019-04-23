@@ -5,15 +5,15 @@ import os
 
 PROJECT_ROOT = os.environ.get('PROJECT_ROOT')
 DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
+RESULTS_DIR = os.path.join(PROJECT_ROOT, 'results')
 
 
 # data set variables
 
-RAW_DATA_SET_NAME = 'raw.csv'
-FILTERED_DATA_SET_NAME = 'filtered.csv'
-PROCESSED_DATA_SET_NAME = 'processed.csv'
-NUM_COLS = 3073
-ASSIGNED_LABELS = ('5', '7')
+DATA_SET_NAME = 'heart.csv'
+
+NUM_COLS = 14
+NUM_FEATURES = NUM_COLS - 1
 
 
 # data loading variables
@@ -28,3 +28,8 @@ BATCH_SIZE = 64
 # worker variables
 
 NUM_WORKERS = 4
+
+
+# training variables
+
+NUM_EPOCHS = 100

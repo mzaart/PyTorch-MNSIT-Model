@@ -3,19 +3,22 @@ from torch.utils.data import Dataset
 from ...config import NUM_COLS
 
 
-class FilteredDataSet(Dataset):
+class HeartDataSet(Dataset):
+    """
+    Loads the UCI Heart Disease data set.
+    """
 
     def __init__(self, np_array, transform=None):
         self.transform = transform
         self.n = np_array.shape[0]
-        np_pixels = np_array[:, :NUM_COLS-1]
+        np_features = np_array[:, :NUM_COLS-1]
         np_labels = np_array[:, NUM_COLS-1]
-        self.pixels = torch.from_numpy(np_pixels)
-        self.labels = torch.from_numpy(np_labels)
+        self.features = torch.from_numpy(np_features).float()
+        self.labels = torch.from_numpy(np_labels).float()
 
     def __getitem__(self, index):
         item = {
-            'x': self.pixels[index],
+            'x': self.features[index],
             'y': self.labels[index]
         }
         if self.transform:

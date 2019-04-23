@@ -3,6 +3,10 @@ from ..config import DEFAULT_TRAINING_SET_SIZE, DEFAULT_VALIDATION_SET_SIZE, DEF
 
 
 class DataSetSamplers:
+    """
+    Provides samplers from different subsets of the data, basically splitting the data into
+    training, validation and testing subsets.
+    """
 
     def __init__(
             self,

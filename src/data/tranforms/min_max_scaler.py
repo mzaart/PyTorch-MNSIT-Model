@@ -9,7 +9,6 @@ class MinMaxScaler(InPlaceTransformer):
         self.num_items = num_features
         self.sample_min = sample_min
         self.sample_max = sample_max
-        print('Num features:', num_features)
         self.desired_min = desired_min or self._get_scalar_tensor(0, num_features)
         self.desired_max = desired_max or self._get_scalar_tensor(1, num_features)
 
@@ -21,7 +20,6 @@ class MinMaxScaler(InPlaceTransformer):
         """
         sample_min = [col.min() for col in features.T]
         sample_max = [col.max() for col in features.T]
-        print(len(sample_min))
         return MinMaxScaler(features.shape[1], sample_min, sample_max, desired_min, desired_max)
 
     def transform_x(self, x):

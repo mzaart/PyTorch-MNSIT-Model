@@ -1,0 +1,1 @@
+from .majority_class_classifier import MajorityClassClassifier

@@ -1,5 +1,9 @@
 
 class ClassMapper:
+    """
+    Maps labels for the different classes in the data set.
+    For example, this transform can be used to map sting labels to numeric values.
+    """
 
     def __init__(self, class_mapping):
         self.class_mapping = class_mapping

@@ -3,6 +3,9 @@ from torch.utils.data import Dataset
 
 
 class ShuffledDataSet(Dataset):
+    """
+    Provides random access to a predefined data set.
+    """
 
     def __init__(self, data_set):
         self.data_set = data_set
